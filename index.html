@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .yes-button, .no-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .yes-button {
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+        }
+        .no-button {
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button class="yes-button" onclick="handleYesClick()">Yes</button>
+        <button class="no-button" onclick="handleNoClick()">No</button>
+    </div>
+
+    <script>
+        let noClickCount = 0;
+
+        function handleNoClick() {
+            const noButton = document.querySelector(".no-button");
+            const yesButton = document.querySelector(".yes-button");
+
+            if (noClickCount === 0) {
+                noButton.textContent = "Are you sure?";
+                yesButton.style.fontSize = "30px"; // Increase size
+            } else if (noClickCount === 1) {
+                noButton.textContent = "F*CK you";
+            }
+
+            noClickCount++;
+        }
+
+        function handleYesClick() {
+            window.location.href = "yes_page.html";
+        }
+    </script>
+</body>
+</html>
